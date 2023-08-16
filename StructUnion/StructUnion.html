@@ -1,0 +1,82 @@
+<DOCTYPE >
+    <html>
+            <head>
+                <style>
+                    /* body {
+                      color: red;
+                    } */
+                </style>
+                <title>
+                    Struct and Union
+                </title>
+            </head>
+    
+            <body>
+                <h1>Struct </h1>
+                <h2> Cách định nghĩa struct trong C</h2>
+                <p>
+                    Trước khi chúng ta có thể khai báo biến với struct, bạn cần định nghĩa nó – Đó cũng là lý do tại sao struct được gọi là kiểu dữ liệu người dùng định nghĩa.
+                </p>
+                <p>
+                    Khi nào chúng ta cần phải tự định nghĩa 1 kiểu cấu trúc? Khi bạn cần lưu trữ một đối tượng có nhiều thuộc tính. <br>
+                    Ví dụ:<br>
+                    Đối tượng SinhVien có các thuộc tính (Mã sinh viên, họ, tên, giới tính, quê quán,…) <br>
+                    Đối tượng LopHoc có các thuộc tính (Mã lớp, tên lớp, giáo viên chủ nhiệm, sĩ số,…). <br>
+                    Khi đó chúng ta nên dùng struct để quản lý chương trình.
+                </p>
+                <h2>Cú pháp định nghĩa struct trong C</h2>
+                <p>
+                    struct structureName <br>
+                    {<br>
+                        dataType member1;<br>
+                        dataType member2;<br>
+                        ...<br>
+                    };<br>
+                </p>
+                <h2>Từ khóa typedef</h2>
+                <p>
+                    Bạn có thể sử dụng từ khóa typedef để tạo ra một tên thay thế cho kiểu dữ liệu đã có. 
+                    Nó thường được sử dụng kiểu struct để đơn giản hóa cú pháp khai báo biến. 
+                    Nhưng nó cũng có thể sử dụng với các kiểu dữ liệu nguyên thủy.
+                </p>
+                <p>Ví dụ:<br>
+                    Ta có đoạn code <br>
+                    struct Distance{<br>
+                        int feet;<br>
+                        float inch;<br>
+                    };<br>
+                    <br>
+                    int main() {<br>
+                        structure Distance d1, d2;<br>
+                    }<br>
+                    Đoạn code trên tương đương <br>
+                    typedef struct SinhVien{<br>
+                        int feet;<br>
+                        float inch;<br>
+                    } distances;<br>
+                    <br>
+                    int main() {<br>
+                        distances d1, d2;<br>
+                    }<br>
+                </p>
+                <h2>Kích thước kiểu dữ liệu của Struct</h2>
+                <h3>Theo cách quét của C</h3>
+                <p>
+                    1 lần khi môi trường C quét thì nó xài 8 byte dữ liệu để quét  ví dụ :<br>
+                    struct Distance{<br>
+                        uint8_t  feet;   1byte+4byte+3byte dư<br>
+                        uint32_t inch;<br>
+                    };<br>
+                    Xài 8 byte=8;
+                </p>
+                <h3>Theo cách quét của gcc</h3>
+                <p>
+                    1 lần khi môi trường gcc quét thì nó xài  byte của dữ liệu lớn size nhất để quét  ví dụ :<br>
+                    struct Distance{<br>
+                    uint8_t  feet;   1byte+3byte dư<br>
+                    uint32_t inch; 4 byte lớn nhất<br>
+                    };<br>
+                    Xài 8 byte=4+4;
+                </p>
+            </body>
+    </html>

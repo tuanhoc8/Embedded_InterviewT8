@@ -1,0 +1,66 @@
+<DOCTYPE>
+
+    <html>
+        <head>
+    
+            <title>
+                Compiler
+            </title>
+        </head>
+        <body>
+            <p>
+                Quy trình dịch là quá trình chuyển đổi từ ngôn ngữ bậc cao (NNBC) (C/C++, Pascal, Java, C#…) sang ngôn ngữ đích (ngôn ngữ máy) để máy tính có thể hiểu và thực thi. 
+                Ngôn ngữ lập trình C là một ngôn ngữ dạng biên dịch. 
+                Chương trình được viết bằng C muốn chạy được trên máy tính phải trải qua một quá trình biên dịch để chuyển đổi từ dạng mã nguồn sang chương trình dạng mã thực thi. 
+                Quá trình được chia ra làm 4 giai đoạn chính:<br>
+                
+            </p>
+            <ul>
+                <li>
+                    Giai đoàn tiền xử lý (Pre-processor)
+                </li>
+                <li>
+                    Giai đoạn dịch NNBC sang Asembly (Compiler)
+                </li>
+                <li>
+                    Giai đoạn dịch asembly sang ngôn ngữ máy (Asember)
+                </li>
+                <li>
+                    Giai đoạn liên kết (Linker)
+                </li>
+                <img src="../images/Compiler/GCC_CompilationProcess.jpg">
+            </ul>
+            <h2>Giai đoàn tiền xử lý (Pre-processor)</h2>
+            <p>Giai đoạn thực hiện</p>
+            <ul>
+                <li>Nhận mã nguồn</li>
+                <li>Xóa bỏ tất cả chú thích, comments của chương trình</li>
+                <li>Chỉ thị tiền xử lý (bắt đầu bằng #) cũng được xử lý</li>
+            </ul>
+            <p>Ví dụ:</p>
+            <ul>
+                <li>chỉ thị #include cho phép ghép thêm mã chương trình của một tệp tiêu để vào mã nguồn cần dịch</li>
+                <li>Các hằng số được định nghĩa bằng #define sẽ được thay thế bằng giá trị cụ thể tại mỗi nơi sử dụng trong chương trình.</li>
+            </ul>
+            <h2>Giai đoạn dịch NNBC sang Asembly (Compiler)</h2>
+            <ul>
+                <li>Phân tích cú pháp (syntax) của mã nguồn NNBC</li>
+                <li>Chuyển chúng sang dạng mã Assembly là một ngôn ngữ bậc thấp (hợp ngữ) gần với tập lệnh của bộ vi xử lý</li>
+            </ul>
+            <h2>Giai đoạn dịch asembly sang ngôn ngữ máy (Asember)</h2>
+            <ul>
+                <li>Dịch chương trình sang 0-1</li>
+                <li>Một tệp mã máy (.obj) sinh ra trong hệ thống sau đó</li>
+            </ul>
+            <h2>Giai đoạn liên kết (Linker)</h2>
+            <ul>
+                <li>Trong giai đoạn này mã máy của một chương trình dịch từ nhiều nguồn (file .c hoặc file thư viện .lib) được liên kết lại với nhau để tạo thành chương trình đích duy nhất</li>
+                <li>Mã máy của các hàm thư viện gọi trong chương trình cũng được đưa vào chương trình cuối trong giai đoạn này</li>
+                <li>Chính vì vậy mà các lỗi liên quan đến việc gọi hàm hay sử dụng biến tổng thể mà không tồn tại sẽ bị phát hiện. 
+                    Kể cả lỗi viết chương trình chính không có hàm main() cũng được phát hiện trong liên kết
+                </li>
+            </ul>
+            <p>Kết thúc quá trình tất cả các đối tượng được liên kết lại với nhau thành một chương trình có thể thực thi được (executable hay .exe) thống nhất</p>
+        
+        </body>
+    </html>

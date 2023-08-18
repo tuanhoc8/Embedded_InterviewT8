@@ -12,17 +12,39 @@
         </head>
 
         <body>
-            <h1>Địa chỉ của pointer</h1>
-            <p>Nếu ta có một biến var trong chương trình của mình, &var sẽ cung cấp cho chúng ta địa chỉ của nó trong bộ nhớ</p>
-            <h1>Con trỏ hàm</h1>
-            <p>Ví dụ:</p>
-            <p>cách khai báo void(*ptr)(int ,int)</p>
-            <h1>Con trỏ void</h1>
-            <p>Con trỏ void được khai báo giống như một con trỏ bình thường, sử dụng từ khóa void làm kiểu con trỏ:</p>
-            <p>void *ptr;</p>
-            <p>Tuy nhiên, con trỏ void không xác định được kiểu dữ liệu của vùng nhớ mà nó trỏ tới, chúng ta không thể truy xuất trực 
-                tiếp</p>
-            <h1>Pointer to Pointer</h1>
-            
+            <ol>
+                <h1><li>Địa chỉ của pointer</li></h1>
+                <p>Trong ngôn ngữ C/C++, con trỏ (pointer) là những biến lưu trữ địa chỉ bộ nhớ của những biến khác.</p>
+                <img src="../images/Pointer/Pointer.png">
+                <p>
+                    Trong hình trên, biến var lưu giá trị 5 có địa chỉ là 0x61ff08.<br>
+                    Biến pointVar là biến con trỏ, lưu địa chỉ của biến var (trỏ đến vùng nhớ của biến var), tức là nó lưu giá trị 0x61ff08.
+                </p>
+                <h1><li>Con trỏ NULL</li></h1>
+                <p>Con trỏ NULL là con trỏ lưu địa chỉ 0x00000000. Tức địa chỉ bộ nhớ 0, có ý nghĩa đặc biệt, cho biết con trỏ không trỏ vào đâu cả.</p>
+                
+                <h1><li>Con trỏ hàm</li></h1>
+                <p>Con trỏ hàm là một biến lưu trữ địa chỉ của một hàm, thông qua biến đó, ta có thể gọi hàm mà nó trỏ tới.</p>
+                <p>Ví dụ:</p>
+                    <p>cách khai báo void(*ptr)(int ,int)</p>
+                    <h1>Con trỏ void</h1>
+                    <p>Con trỏ void được khai báo giống như một con trỏ bình thường, sử dụng từ khóa void làm kiểu con trỏ:</p>
+                    <p>void *ptr;</p>
+                    <p>Tuy nhiên, con trỏ void không xác định được kiểu dữ liệu của vùng nhớ mà nó trỏ tới, chúng ta không thể truy xuất trực 
+                    tiếp
+                </p>
+                <h1><li>Pointer to Pointer</li></h1>
+                <p>Pointer to pointer là một loại con trỏ dùng để lưu trữ địa chỉ của biến con trỏ.</p>
+                <h1><li>Kích thước con trỏ</li></h1>
+                <p>Kích thước của các biến con trỏ có khác nhau không? 
+                    Con trỏ chỉ lưu địa chỉ nên kích thước của mọi con trỏ là như nhau. 
+                    Kích thước này phụ thuộc vào môi trường hệ thống máy tính:
+                </p>
+                <ul>
+                    <li> Môi trường Windows 32 bit: 4 bytes</li>
+                    <li> Môi trường Windows 64 bit: 8 bytes</li>    
+                        
+                </ul>
+            </ol>
         </body>
 </html>

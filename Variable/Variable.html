@@ -16,6 +16,21 @@
             <p>Khi một biến được khai báo với từ khóa static, vùng nhớ cho nó tồn tại theo vòng đời của chương trình. Ngay cả khi hàm được gọi nhiều lần, vùng nhớ cho biến static chỉ được cấp nhát một lần và giá trị của biến trong những lần gọi trước đó được lưu lại và được sử dụng để thực hiện thông qua các lượt gọi hàm tiếp theo. Điều này rất hữu ích để triển khai các ứng dụng nào khác mà trạng thái chức năng trước đó cần được lưu trữ.</p>
             <p> Nếu ta gán 1 con trỏ là địa chỉ của biến static và ta đổi giá trị con trỏ thì giá trị biến static cũng đổi</p>
             <p>Nếu ta trả về 1 kiểu con trỏ thì khi trả về cần thêm chữ static tại giá trị muốn trả về</p>
+                <p>Khi một biến được khai báo với từ khóa static, vùng nhớ cho nó tồn tại theo vòng đời của chương trình. Ngay cả khi hàm được gọi nhiều lần, vùng nhớ cho biến static chỉ được cấp nhát một lần và giá trị của biến trong những lần gọi trước đó được lưu lại và được sử dụng để thực hiện thông qua các lượt gọi hàm tiếp theo. Điều này rất hữu ích để triển khai các ứng dụng nào khác mà trạng thái chức năng trước đó cần được lưu trữ.</p>
+            <p> Nếu ta gán 1 con trỏ là địa chỉ của biến static và ta đổi giá trị con trỏ thì giá trị biến static cũng đổi</p>
+            <p>Nếu ta trả về 1 kiểu con trỏ thì khi trả về cần thêm chữ static tại giá trị muốn trả về</p>
+            <h2>Biến static cục bộ</h2>
+            <p>
+                Khi 1 biến cục bộ được khai báo với từ khóa static. <br>
+                Biến sẽ chỉ được khởi tạo 1 lần duy nhất và tồn tại suốt thời gian chạy chương trình.<br>
+                 Giá trị của nó không bị mất đi ngay cả khi kết thúc hàm. 
+                 Tuy nhiên khác với biến toàn cục có thể gọi trong tất cả mọi nơi trong chương trình, thì biến cục bộ static chỉ có thể được gọi trong nội bộ hàm khởi tạo ra nó. 
+                 Mỗi lần hàm được gọi, giá trị của biến chính bằng giá trị tại lần gần nhất hàm được gọi.
+            </p>
+            <h2>Biến static toàn cục</h2>
+            <p>
+                Biến toàn cục static sẽ chỉ có thể được truy cập và sử dụng trong File khai báo nó, các File khác không có cách nào truy cập được. 
+            </p>
             <h1>Biến extern</h1>
             <p>Trong C, khi 1 biến đi sau từ khóa “extern” có nghĩa là:</p>
             <ul>

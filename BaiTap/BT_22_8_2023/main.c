@@ -26,7 +26,7 @@ void ADD_VAO_GIO_HANG(uint8_t *gio_hang,DO_DUNG_CA_NHAN dungcu){
 void DELETTE_ITEM(uint8_t *gio_hang,DO_DUNG_CA_NHAN dungcu){
     *gio_hang &=(~dungcu);
 }
-static const char *tendungcu(uint8_t dungcu_value){
+static const char *tendungcu(DO_DUNG_CA_NHAN dungcu_value){
     #define dungcu_case(D) case D : return #D
     switch(dungcu_value){
         TENDO(dungcu_case,;);

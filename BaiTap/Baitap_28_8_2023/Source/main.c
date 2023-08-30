@@ -159,7 +159,13 @@ static char *findReplace(char *DOCUMENTCHANGE,char *FIND_ARR,char *ARR_REPLACE){
         if (DOCUMENTCHANGE[SIZE_DOCUMENCHANGE+1]=='\0') break;
     }
     insertWords(DOCUMENTCHANGE+BEGIN_CHARACTER,SIZE_DOCUMENCHANGE+1-BEGIN_CHARACTER);
-    char *NEWDOCUMENT=(char *)malloc(sizeof(DOCUMENTCHANGE)+count*(sizeof(ARR_REPLACE))-sizeof(FIND_ARR)+1);
+    int sizeMAKE=0;
+    if((sizeof(ARR_REPLACE))-sizeof(FIND_ARR)>0)
+        sizeMAKE=sizeof(ARR_REPLACE)-sizeof(FIND_ARR);
+    else
+        sizeMAKE=-sizeof(ARR_REPLACE)+sizeof(FIND_ARR);
+
+    char *NEWDOCUMENT=(char *)malloc(sizeof(DOCUMENTCHANGE)-count*(sizeMAKE+1));
     if(WORD_HEAD==NULL) return DOCUMENTCHANGE;
     else{
         int LOCATE=0;

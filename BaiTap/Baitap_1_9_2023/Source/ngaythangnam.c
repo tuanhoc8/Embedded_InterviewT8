@@ -47,17 +47,8 @@ uint16_t ngayBuNhuan(uint16_t year_begin,uint16_t year_end){
 void printWeekDay(Date date_value){
     //if the date_value is after the DATE_ORGIN is true; else is false
     int countday=0;
-    if(date_value.year>DATE_ORGIN.year){
-        countday=((date_value.year-DATE_ORGIN.year)+daysOfYear(date_value)-daysOfYear(DATE_ORGIN))%7;
-        countday=countday+ngayBuNhuan(DATE_ORGIN.year,date_value.year);
-    }
-    else if(date_value.year==DATE_ORGIN.year){
-        countday=daysOfYear(date_value)-daysOfYear(DATE_ORGIN);
-    }
-    else{
-        countday=((date_value.year-DATE_ORGIN.year)+daysOfYear(date_value)-daysOfYear(DATE_ORGIN))%7;
-        countday=countday+ngayBuNhuan(date_value.year,DATE_ORGIN.year);
-    }
+    countday=((date_value.year-DATE_ORGIN.year)+daysOfYear(date_value)-daysOfYear(DATE_ORGIN))%7;
+    countday=countday+ngayBuNhuan(DATE_ORGIN.year,date_value.year);
     if(countday>0){
             countday%=7;
         }

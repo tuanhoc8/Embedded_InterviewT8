@@ -89,56 +89,32 @@ uint8_t heSo(uint8_t i){
     }
 }
 void makeValue(uint16_t number){
-    
-    if(number>99){
-        if((number%100==0)){
+    if((number%100==0)){
 
-        }
-        else if((number%100<10)){
-            char *arr=printfNumber(number%100);
-            insertWords(arr,lengthArr(arr));
-            insertWords("LE",2);
-        }
-        else if(number%100<20){
-            char *arr=printfNumber(number%10);
-            insertWords(arr,lengthArr(arr));
-            insertWords("MUOIf",5);
-        }
-        else {
-            char *arr=printfNumber(number%10);
-            insertWords(arr,lengthArr(arr));
-            insertWords("MUOI",4);
-            arr=printfNumber((number%100)/10);
-            insertWords(arr,lengthArr(arr));
-        }
+    }
+    else if((number%100<10)){
+        char *arr=printfNumber(number%100);
+        insertWords(arr,lengthArr(arr));
+        insertWords("LE",2);
+    }
+    else if(number%100<20){
+        char *arr=printfNumber(number%10);
+        insertWords(arr,lengthArr(arr));
+        insertWords("MUOIf",5);
+    }
+    else {
+        char *arr=printfNumber(number%10);
+        insertWords(arr,lengthArr(arr));
+        insertWords("MUOI",4);
+        arr=printfNumber((number%100)/10);
+        insertWords(arr,lengthArr(arr));
+    }
+    if(number>99) {
         number/=100;
         char *arr=printfNumber(number);
         insertWords("TRAM",4);
         insertWords(arr,lengthArr(arr));
-        
     }
-    else{
-        if(number==0){
-
-        }
-        else if(number<10){
-            char *arr=printfNumber(number%100);
-            insertWords(arr,lengthArr(arr));
-        }
-        else if(number<20){
-            char *arr=printfNumber(number%10);
-            insertWords(arr,lengthArr(arr));
-            insertWords("MUOIf",5);
-        }
-        else{
-            char *arr=printfNumber(number%10);
-            insertWords(arr,lengthArr(arr));
-            insertWords("MUOI",4);
-            arr=printfNumber((number%100)/10);
-            insertWords(arr,lengthArr(arr));
-        }
-    }
-    
 }
 void printfMenhGia(){
     Words *WORD_CHECK=WORD_CURRENT;
@@ -168,8 +144,12 @@ void MenhGia(char arr[]){
         }
         char *arr_menh_gia=printfPhanCach(menh_gia);
         insertWords(arr_menh_gia,lengthArr(arr_menh_gia));
-        menh_gia<<=1;
         makeValue(number);
+        if((menh_gia)&& (locate>0) &&( number >0) &&(number<10)){
+            arr_menh_gia="KHONG TRAM";
+            insertWords(arr_menh_gia,lengthArr(arr_menh_gia));
+        }
+        menh_gia<<=1;
 
     }
     // printf("%c---%c---,%c---,%c\n",WORD_CURRENT->arr[0],WORD_CURRENT->next->arr[0],WORD_CURRENT->next->next->arr[0],WORD_CURRENT->next->next->next->arr[0]);
